@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+    box-sizing: border-box;
+    
+}
+body {
+    background-color: white;
+    font-family: verdana;
+}
+
+.CRY_container {
+    margin: 0px;
+    width: 768px;
+}
+.CRY_player {
+    background: url("../images/Cover.jpg") no-repeat darkolivegreen;
+    height: 768px;
+    position: relative;
+    width: 768px;
+    z-index: 2;
+    display: inline-block;
+    overflow: hidden;
+    
+}
+.UIshade{
+    display: block;
+    position: absolute;
+    background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.4));
+    width:100vw;
+    height:50vh;
+    bottom:0px;
+}
+
+.title {
+    color: #FFFFFF;
+    font-size: 14px;
+    /*! font-weight: bold; */
+    /*! top: 23px; */
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    position: absolute;
+    bottom: 40px;
+    display: flex;
+    height: 20px;
+    width: 512px;
+    align-self: center;
+    justify-content: center;
+}
+.pl {
+    background: transparent url("../images/PlaylistOpen.svg") no-repeat;
+    cursor: pointer;
+    height: 25px;
+    right: 25px;
+    position: absolute;
+    top: 50px;
+    width: 25px;
+}
+.plc {
+    background: transparent url("../images/PlaylistClose.svg") no-repeat;
+    cursor: pointer;
+    height: 25px;
+    right: 25px;
+    position: absolute;
+    top: 22px;
+    width: 25px;
+}
+
+.CRY_controls {
+    cursor: pointer;
+    height: 33px;
+    left: 160px;
+    position: absolute;
+    bottom: 65px;
+    width: 256px;
+}
+.CRY_controls .play, .CRY_controls .pause, .CRY_controls .rew, .CRY_controls .fwd {
+    background: transparent url("../images/spr.png") no-repeat scroll 0 0;
+    float: left;
+    height: 100%;
+    width: 33%;
+}
+.CRY_controls .play {
+    background: url("../images/Play.svg") no-repeat;
+}
+.CRY_controls .pause {
+    background: url("../images/Pause.svg") no-repeat;
+    display: none;
+}
+.CRY_controls .rew {
+    background: url("../images/Back.svg") no-repeat;
+}
+.CRY_controls .fwd {
+    background: url("../images/Forth.svg") no-repeat;
+}
+.hidden {
+    display: none;
+}
+.CRY_controls .visible {
+    display: block;
+}
+.volume {
+    height: 11px;
+    left: 186px;
+    position: absolute;
+    top: 96px;
+    width: 112px;
+}
+.timeline{
+    width:462px;
+    height:1px;
+    background-color: #ffffffaa;
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+}
+.playhead {
+    background: url("../images/Timeline_Status.svg") no-repeat;
+    height: 14px;
+    width: 14px;
+    left: 20px;
+    position: absolute;
+    bottom: 19px;    
+}
+
+.showpl{
+    right:0px !important;
+}
+
+.playlist {
+    background-color: #ffffffaa;
+    border-radius: 15px 0px 0px 15px;
+   
+    margin: 25px 0 0 0px;
+    padding-bottom: 10px;
+    padding-top: 15px;
+    position: absolute;
+    width: 200px;
+    z-index: 1;
+    /*! color: black; */
+    height: 437px;
+    /*! right: 0px; */
+    right: -200px;
+}
+.plul{
+     list-style-type: none;
+     margin-top: 50px;
+    /*! font-size: 12px; */
+}
+.plul li {
+    color: black;
+    cursor: pointer;
+    margin: 0 0 15px 15px;
+}
+.plul li.active {
+    font-weight: bold;
+}
