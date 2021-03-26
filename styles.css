@@ -1,4 +1,4 @@
-*:not(.playhead) {
+*:not(.ui-slider-range) {
     margin: 0;
     padding: 0;
     -webkit-transition: all 0.4s ease-in-out;
@@ -12,17 +12,23 @@
 body {
     background-color: white;
     font-family: verdana;
+    height:100vh;
+    width:100vh;
+    max-width:768px;
+    max-height:768px;
 }
 
 .CRY_container {
     margin: 0px;
-    width: 768px;
+    width: 100%;
+    height: 100%;
 }
 .CRY_player {
-    background: url("../images/Cover.jpg") no-repeat darkolivegreen;
-    height: 768px;
+    background: url("Cover.jpg") no-repeat darkolivegreen;
+    background-size: contain;
+    height: 100%;
     position: relative;
-    width: 768px;
+    width: 100%;
     z-index: 2;
     display: block;
     overflow: hidden;
@@ -52,7 +58,7 @@ body {
     transform: translateX(-50%);
 }
 .pl {
-    background: transparent url("../images/PlaylistOpen.svg") no-repeat;
+    background: transparent url("PlaylistOpen.svg") no-repeat;
     cursor: pointer;
     height: 25px;
     right: 25px;
@@ -61,7 +67,7 @@ body {
     width: 25px;
 }
 .plc {
-    background: transparent url("../images/PlaylistClose.svg") no-repeat;
+    background: transparent url("PlaylistClose.svg") no-repeat;
     cursor: pointer;
     height: 25px;
     right: 25px;
@@ -72,34 +78,33 @@ body {
 
 .CRY_controls {
     cursor: pointer;
-    height: 33px;
+    height: 60px;
     left: 50%;
     position: absolute;
     bottom: 65px;
-    width: 256px;
+    width: 400px;
     transform: translateX(-50%);
     display: flex;
     justify-content: center;
     align-items: safe;
 }
 .CRY_controls .play, .CRY_controls .pause, .CRY_controls .rew, .CRY_controls .fwd {
-    background: transparent url("../images/spr.png") no-repeat scroll 0 0;
     float: left;
     height: 100%;
     width: 33%;
 }
 .CRY_controls .play {
-    background: url("../images/Play.svg") no-repeat center;
+    background: url("Play.svg") no-repeat center;
 }
 .CRY_controls .pause {
-    background: url("../images/Pause.svg") no-repeat center;
+    background: url("Pause.svg") no-repeat center;
     display: none;
 }
 .CRY_controls .rew {
-    background: url("../images/Back.svg") no-repeat center;
+    background: url("Back.svg") no-repeat center;
 }
 .CRY_controls .fwd {
-    background: url("../images/Forth.svg") no-repeat center;
+    background: url("Forth.svg") no-repeat center;
 }
 .hidden {
     display: none;
@@ -115,28 +120,30 @@ body {
     bottom: 25px;
     left: 5%;
 }
-/*.playhead {
-    background: url("../images/Timeline_Status.svg") no-repeat;
+.playhead {
+    /*background: url("Timeline_Status.svg") no-repeat;*/
     height: 14px;
-    width: 14px;
-    left: 20px;
-    position: absolute;
-    bottom: 19px;  
+    /*! width: 14px; */
+    /*! left: 0px; */
+    /*! position: absolute; */
+    bottom: 0px;  
     cursor: pointer;
-}*/
+}
 .ui-slider {
-    height:1px;
+    height:10px;
     background-color: #ffffffaa;
     text-decoration:none;
     text-align:center;
+    border-radius: 5px;
 }
 .ui-slider-handle {
-    background: url("../images/Timeline_Status.svg") no-repeat !important;
+    background: url("Timeline_Status.svg") no-repeat !important;
     height: 14px;
     width: 14px;
     bottom: 22px; 
     text-decoration:none;
     border:none !important;
+    display:none;
 }
 
 .showpl{
