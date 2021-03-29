@@ -1,9 +1,4 @@
 $(document).ready(function () {
-    /*const resize = () => {
-     console.log('resize')
-    }
-    window.addEventListener('resize', resize);*/
-
     //variables
     var song;
     var playhead = $('#playhead');
@@ -16,8 +11,7 @@ $(document).ready(function () {
         max: 100,
         step: 0.001,
         start: function(event,ui) {},
-        slide: function(event, ui) {
-            
+        slide: function(event, ui) { 
             song.currentTime = ui.value;
         },
         stop: function(event,ui) {}
@@ -31,7 +25,7 @@ $(document).ready(function () {
 
         $('.CRY_player .title').text(title);
 
-        song = new Audio('data/' + url);
+        song = new Audio(url);
         
         song.addEventListener('timeupdate',function (){
             
@@ -42,6 +36,7 @@ $(document).ready(function () {
        
         $('.playlist li').removeClass('active');
         elem.addClass('active');
+        return true;
     }
     
     function playAudio() {
@@ -64,11 +59,7 @@ $(document).ready(function () {
                 next = $('.playlist li:first-child');
             }
             playhead.slider('option', 'value',0);
-            initAudio(next);
-            setTimeout(function() {
-                playAudio();
-            }, 200);
-            
+            initAudio(next).done(playAudio()); 
         });
     }
     
@@ -103,10 +94,7 @@ $(document).ready(function () {
         if (next.length == 0) {
             next = $('.playlist li:first-child');
         }
-        initAudio(next);
-         setTimeout(function() {
-                playAudio();
-            }, 200);
+        initAudio(next).done(playAudio());
     });
 
     // click rewind
@@ -119,10 +107,7 @@ $(document).ready(function () {
         if (prev.length == 0) {
             prev = $('.playlist li:last-child');
         }
-        initAudio(prev);
-         setTimeout(function() {
-                playAudio();
-            }, 200);
+        initAudio(prev).done(playAudio());
     });
 
     // show playlist
@@ -142,12 +127,10 @@ $(document).ready(function () {
     // playlist elements - click
     $('.playlist li').click(function () {
         stopAudio();
-        initAudio($(this));
-        playAudio()
+        initAudio($(this)).done(playAudio());
     });
 
     // initialization - first element in playlist
     initAudio($('.playlist li:first-child'));
-
-    
+  
 });
