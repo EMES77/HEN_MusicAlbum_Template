@@ -1,7 +1,25 @@
+/*
+Hic et Nunc HTML Audio Player HTML Template by ©cryptemes
+
+Version 2.0
+
+Version 1 was programmed for ©stereohopper and released on hicetnunc.xyz as OBJKT#15472 on March 28, 2021
+hicetnunc.xyz/objkt/15472
+
+The audio-files in this template are made by ©stereohopper - twitter.com/stereohopper
+
+
+Copyright March 2021 - twitter.com/cryptemes
+
+We appreciate you getting in touch with us if you use this template for your own project. 
+But you don't have to. 
+However, please leave this Note untouched.
+*/
 $(document).ready(function () {
     //variables
     var song;
     var playhead = $('#playhead');
+    var playing = true;
     
     
     // initialize playhead
@@ -41,7 +59,7 @@ $(document).ready(function () {
     
     function playAudio() {
         song.play();
-        
+        playing = true;
         playhead.slider("option", "max", song.duration);
         
         $('.play').addClass('hidden');
@@ -65,7 +83,7 @@ $(document).ready(function () {
     
     function stopAudio() {
         song.pause();
-
+        playing = false;
         $('.play').removeClass('hidden');
         $('.pause').removeClass('visible');
     }
@@ -83,6 +101,40 @@ $(document).ready(function () {
 
         stopAudio();
     });
+    
+    
+    //register keypress 
+    $('body').keyup(function(e){
+        // spacebar: play/stop
+        if(e.keyCode == 32){
+            if(playing == true){
+                stopAudio();
+            }else if(playing == false){
+                playAudio();
+            }
+        }
+        //right arrow: next
+        if(e.keyCode == 39){
+            stopAudio();
+
+            var next = $('.playlist li.active').next();
+            if (next.length == 0) {
+                next = $('.playlist li:first-child');
+            }
+            initAudio(next).done(playAudio());
+        }
+        //left arrow: previous
+        if(e.keyCode == 37){
+            stopAudio();
+
+        var prev = $('.playlist li.active').prev();
+        if (prev.length == 0) {
+            prev = $('.playlist li:last-child');
+        }
+        initAudio(prev).done(playAudio());
+        }
+    });
+    
 
     // click forward
     $('.fwd').click(function (e) {
@@ -134,3 +186,5 @@ $(document).ready(function () {
     initAudio($('.playlist li:first-child'));
   
 });
+
+

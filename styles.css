@@ -1,7 +1,19 @@
 /*
+Hic et Nunc HTML Audio Player HTML Template by ©cryptemes
+
+Version 2.0
+
+Version 1 was programmed for ©stereohopper and released on hicetnunc.xyz as OBJKT#15472 on March 28, 2021
+hicetnunc.xyz/objkt/15472
+
+The audio-files in this template are made by ©stereohopper - twitter.com/stereohopper
+
+
 Copyright March 2021 - twitter.com/cryptemes
 
-
+We appreciate you getting in touch with us if you use this template for your own project. 
+But you don't have to. 
+However, please leave this Note untouched.
 */
 *:not(.ui-slider-range) {
     margin: 0;
@@ -15,29 +27,27 @@ Copyright March 2021 - twitter.com/cryptemes
     
 }
 body {
-    background-color: white;
+    background-color: black;
     font-family: verdana;
-    
-    height:100vh;
-    width:100vh;
-    max-width:768px;
-    max-height:768px;
+
 }
 
 .CRY_container {
     margin: 0px;
-    width: 100%;
-    height: 100%;
 }
 .CRY_player {
-    background: url("Cover.jpg") no-repeat darkolivegreen;
+    background: url("Cover.jpg") no-repeat #111111;
     background-size: contain;
-    height: 100%;
+    
     position: relative;
-    width: 100%;
+    
     z-index: 2;
     display: block;
     overflow: hidden;
+    height:100vmin;
+    width:100vmin;
+    max-width:768px;
+    max-height:768px;
     
 }
 .UIshade{
@@ -56,7 +66,7 @@ body {
     -webkit-user-select: none;
     -ms-user-select: none;
     position: absolute;
-    bottom: 35px;
+    bottom: 55px;
     display: flex;
     height: 20px;
     align-self: center;
@@ -87,7 +97,7 @@ body {
     height: 60px;
     left: 50%;
     position: absolute;
-    bottom: 65px;
+    bottom: 85px;
     width: 400px;
     transform: translateX(-50%);
     display: flex;
@@ -132,10 +142,11 @@ body {
 }
 .ui-slider {
     height:10px;
-    background-color: #ffffffaa;
+    background-color: #ffffff22;
     text-decoration:none;
     text-align:center;
     border-radius: 5px;
+    border:none;
 }
 .ui-slider-handle {
     background: url("Timeline_Status.svg") no-repeat !important;
@@ -152,15 +163,16 @@ body {
 }
 
 .playlist {
-    background-color: #ffffffee;
+    background-color: #ffffffaa;
     border-radius: 15px 0px 0px 15px; 
-    margin: 5vh 0 0 0px;
+    margin: 25px 0 0 0;
     padding-bottom: 10px;
     padding-top: 15px;
     position: absolute;
     width: 300px;
     z-index: 1;
-    height: 90vh;
+    height: 90vmin;
+    max-height:680px;
     right: -300px;
 }
 .plul{
@@ -174,4 +186,11 @@ body {
 }
 .plul li.active {
     font-weight: bold;
+}
+
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
