@@ -28,11 +28,11 @@ $(document).ready(function () {
         min: 0, 
         max: 100,
         step: 0.001,
-        start: function(event,ui) {},
+        start: function() {},
         slide: function(event, ui) { 
             song.currentTime = ui.value;
         },
-        stop: function(event,ui) {}
+        stop: function() {}
     });
     
     
@@ -58,6 +58,7 @@ $(document).ready(function () {
     }
     
     function playAudio() {
+        
         song.play();
         playing = true;
         playhead.slider("option", "max", song.duration);
@@ -77,7 +78,11 @@ $(document).ready(function () {
                 next = $('.playlist li:first-child');
             }
             playhead.slider('option', 'value',0);
-            initAudio(next).done(playAudio()); 
+            initAudio(next);
+            song.oncanplaythrough = function () {playAudio();}
+            /*setTimeout(function() {		
+                playAudio();		
+            }, 1000);*/
         });
     }
     
@@ -121,17 +126,25 @@ $(document).ready(function () {
             if (next.length == 0) {
                 next = $('.playlist li:first-child');
             }
-            initAudio(next).done(playAudio());
+            initAudio(next);
+            song.oncanplaythrough = function () {playAudio();}
+            /*setTimeout(function() {		
+                playAudio();		
+            }, 1000);*/
         }
         //left arrow: previous
         if(e.keyCode == 37){
             stopAudio();
 
-        var prev = $('.playlist li.active').prev();
-        if (prev.length == 0) {
-            prev = $('.playlist li:last-child');
-        }
-        initAudio(prev).done(playAudio());
+            var prev = $('.playlist li.active').prev();
+            if (prev.length == 0) {
+                prev = $('.playlist li:last-child');
+            }
+            initAudio(prev);
+            song.oncanplaythrough = function () {playAudio();}
+           /* setTimeout(function() {		
+                playAudio();		
+            }, 1000);*/
         }
     });
     
@@ -146,7 +159,11 @@ $(document).ready(function () {
         if (next.length == 0) {
             next = $('.playlist li:first-child');
         }
-        initAudio(next).done(playAudio());
+        initAudio(next);
+        song.oncanplaythrough = function () {playAudio();}
+        /*setTimeout(function() {		
+            playAudio();		
+        }, 1000);*/
     });
 
     // click rewind
@@ -159,7 +176,11 @@ $(document).ready(function () {
         if (prev.length == 0) {
             prev = $('.playlist li:last-child');
         }
-        initAudio(prev).done(playAudio());
+        initAudio(prev);
+        song.oncanplaythrough = function () {playAudio();}
+        /*setTimeout(function() {		
+            playAudio();		
+        }, 1000);*/
     });
 
     // show playlist
@@ -179,12 +200,17 @@ $(document).ready(function () {
     // playlist elements - click
     $('.playlist li').click(function () {
         stopAudio();
-        initAudio($(this)).done(playAudio());
+        initAudio($(this));
+        song.oncanplaythrough = function () {playAudio();}
+        /*setTimeout(function() {		
+            playAudio();		
+        }, 1000);*/
     });
 
     // initialization - first element in playlist
     initAudio($('.playlist li:first-child'));
   
+    
 });
 
 
