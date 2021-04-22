@@ -20,8 +20,7 @@ $(document).ready(function () {
     var song;
     var playhead = $('#playhead');
     var playing = true;
-    
-    
+        
     // initialize playhead
     playhead.slider({
         range: 'min',
@@ -39,6 +38,7 @@ $(document).ready(function () {
     //functions
     function initAudio(elem) {
         var url = elem.attr('audiourl');
+        console.log(url);
         var title = elem.text();
 
         $('.CRY_player .title').text(title);
@@ -51,9 +51,25 @@ $(document).ready(function () {
             playhead.slider('option', 'value', curtime);
         });
         
+        
+        //automatically play next song
+        song.addEventListener('ended',function(){
+           
+            stopAudio();
+            var next = $('.playlist li.active').next();
+            if (next.length == 0) {
+                next = $('.playlist li:first-child');
+            }
+            playhead.slider('option', 'value',0);
+            initAudio(next);
+            song.oncanplay = function () {playAudio();}
+           
+        });
+        
        
         $('.playlist li').removeClass('active');
         elem.addClass('active');
+        
         return true;
     }
     
@@ -66,25 +82,9 @@ $(document).ready(function () {
         $('.play').addClass('hidden');
         $('.pause').addClass('visible');
         
-        autoPlaylist();
     }
     
-    function autoPlaylist(){
-        //automatically play next song
-        song.addEventListener('ended',function(){
-            stopAudio();
-            var next = $('.playlist li.active').next();
-            if (next.length == 0) {
-                next = $('.playlist li:first-child');
-            }
-            playhead.slider('option', 'value',0);
-            initAudio(next);
-            song.oncanplaythrough = function () {playAudio();}
-            /*setTimeout(function() {		
-                playAudio();		
-            }, 1000);*/
-        });
-    }
+    
     
     function stopAudio() {
         song.pause();
@@ -128,9 +128,7 @@ $(document).ready(function () {
             }
             initAudio(next);
             song.oncanplaythrough = function () {playAudio();}
-            /*setTimeout(function() {		
-                playAudio();		
-            }, 1000);*/
+ 
         }
         //left arrow: previous
         if(e.keyCode == 37){
@@ -142,9 +140,7 @@ $(document).ready(function () {
             }
             initAudio(prev);
             song.oncanplaythrough = function () {playAudio();}
-           /* setTimeout(function() {		
-                playAudio();		
-            }, 1000);*/
+
         }
     });
     
@@ -161,9 +157,7 @@ $(document).ready(function () {
         }
         initAudio(next);
         song.oncanplaythrough = function () {playAudio();}
-        /*setTimeout(function() {		
-            playAudio();		
-        }, 1000);*/
+
     });
 
     // click rewind
@@ -178,9 +172,7 @@ $(document).ready(function () {
         }
         initAudio(prev);
         song.oncanplaythrough = function () {playAudio();}
-        /*setTimeout(function() {		
-            playAudio();		
-        }, 1000);*/
+
     });
 
     // show playlist
@@ -202,9 +194,7 @@ $(document).ready(function () {
         stopAudio();
         initAudio($(this));
         song.oncanplaythrough = function () {playAudio();}
-        /*setTimeout(function() {		
-            playAudio();		
-        }, 1000);*/
+
     });
 
     // initialization - first element in playlist
