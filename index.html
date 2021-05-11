@@ -2,7 +2,7 @@
 <!--
 Hic et Nunc HTML Audio Player HTML Template by ©cryptemes
 
-Version 2.0
+Version 2.02
 
 Version 1.0 was programmed for ©stereohopper and released on hicetnunc.xyz as OBJKT#15472 on March 28, 2021
 hicetnunc.xyz/objkt/15472
@@ -29,15 +29,16 @@ However, please leave this Note untouched.
     <div class="CRY_container ">
 
         <div class="CRY_player centered">
-            <video class="BG" src="Cover.mp4" type="video/mp4" autoplay="true" muted loop></video>
+            <video class="BG" id="video" src="Cover.mp4" type="video/mp4" autoplay="true" muted loop></video>
             <div class="UIshade"></div>
             <div class="pl"></div>
-            <div class="title"></div>
+            
             <div class="CRY_controls">
                 <div class="rew"></div>
                 <div class="play"></div>
                 <div class="pause"></div>
                 <div class="fwd"></div>
+                <div class="title"></div>
             </div>
             <div class="timeline">
             <div class="playhead" id="playhead"></div> 
@@ -45,10 +46,13 @@ However, please leave this Note untouched.
             <div class="playlist">
                 <div class="plc"></div>
                  <ul class="plul">
+                     <!--Local file version audio only-->
                     <li audiourl="01_stereohopper.mp3">Track 01</li>
-                    <li audiourl="02_stereohopper.mp3">Track 02</li>
-                    <li audiourl="03_stereohopper.mp3">Track 03</li>
-                    <li audiourl="04_stereohopper.mp3">Track 04</li>
+                     <!--IPFS hosted file versions with video file-->
+                    <li audiourl="https://gateway.pinata.cloud/ipfs/QmZ2NqxCBTzoFWVSKzEvqqgYLEirUFRJqTxHoN1uzEKyY6" videourl="https://gateway.pinata.cloud/ipfs/QmYwEQw4X47N7bxRMp6153LAPMFnonnS78Q6qBuG4ALrUQ">Track 02</li>
+                    <li audiourl="https://gateway.pinata.cloud/ipfs/QmdsyZ8XarSH3DEvvHMZdYzYtthQ699zA4j4tWPBjCKNAH" videourl="https://gateway.pinata.cloud/ipfs/QmNsbNU7ktQsUyvRRZ2URS1d45UFtjKyHfAGoBC4rGV2pA">Track 03</li>
+                     <!--IPFS hosted file version audio only-->
+                    <li audiourl="https://gateway.pinata.cloud/ipfs/QmW2M6fsSWb4ygksuG5VKT5YFSfSUcRqjKE3sToMhrKqu8">Track 04</li>
                 </ul>
             </div>
         </div>
