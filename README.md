@@ -39,7 +39,7 @@ Fallback-Routine:
 Attention! Track-videos are not synced with the audio-tracks!
 
 6. The maximum filesize of the ZIP must be under 100 MB. 
-I have not tested this but I assume that if you use IPFS for hosting the mediafiles each file has a limit of 40 MB.
+I have not tested this but I assume that if you use IPFS for hosting the mediafiles each file has a limit of 100 MB.
 
 
 
