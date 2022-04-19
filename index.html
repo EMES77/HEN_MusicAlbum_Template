@@ -2,7 +2,7 @@
 <!--
 Hic et Nunc HTML Audio Player HTML Template by ©cryptemes
 
-Version 2.02
+Version 2.03
 
 Version 1.0 was programmed for ©stereohopper and released on hicetnunc.xyz as OBJKT#15472 on March 28, 2021
 hicetnunc.xyz/objkt/15472
@@ -18,47 +18,55 @@ However, please leave this Note untouched.
 -->
 <html lang="en">
 <head>
-    <title>CRYPTEMES NFT ALBUM TEMPLATE</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"/>
-    <meta property="og:image" content="Cover.jpg" />
-    <link href="jquery-ui.css" rel="stylesheet" type="text/css" />
-    <link href="styles.css" rel="stylesheet" type="text/css" />
+<title>CRYPTEMES NFT ALBUM TEMPLATE</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"/>
+<meta property="og:image" content="Cover.jpg" />
+<link href="jquery-ui.css" rel="stylesheet" type="text/css" />
+<link href="styles.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <div class="CRY_container ">
-
-        <div class="CRY_player centered">
-            <video class="BG" id="video" src="Cover.mp4" type="video/mp4" autoplay="true" muted loop></video>
-            <div class="UIshade"></div>
-            <div class="pl"></div>
-            
-            <div class="CRY_controls">
-                <div class="rew"></div>
-                <div class="play"></div>
-                <div class="pause"></div>
-                <div class="fwd"></div>
-                <div class="title"></div>
-            </div>
-            <div class="timeline">
-            <div class="playhead" id="playhead"></div> 
-            </div>   
-            <div class="playlist">
-                <div class="plc"></div>
-                 <ul class="plul">
-                     <!--Local file version audio only-->
-                    <li audiourl="01_stereohopper.mp3">Track 01</li>
-                     <!--IPFS hosted file versions with video file-->
-                    <li audiourl="https://gateway.pinata.cloud/ipfs/QmZ2NqxCBTzoFWVSKzEvqqgYLEirUFRJqTxHoN1uzEKyY6" videourl="https://gateway.pinata.cloud/ipfs/QmYwEQw4X47N7bxRMp6153LAPMFnonnS78Q6qBuG4ALrUQ">Track 02</li>
-                    <li audiourl="https://gateway.pinata.cloud/ipfs/QmdsyZ8XarSH3DEvvHMZdYzYtthQ699zA4j4tWPBjCKNAH" videourl="https://gateway.pinata.cloud/ipfs/QmNsbNU7ktQsUyvRRZ2URS1d45UFtjKyHfAGoBC4rGV2pA">Track 03</li>
-                     <!--IPFS hosted file version audio only-->
-                    <li audiourl="https://gateway.pinata.cloud/ipfs/QmW2M6fsSWb4ygksuG5VKT5YFSfSUcRqjKE3sToMhrKqu8">Track 04</li>
-                </ul>
-            </div>
-        </div>
+<div class="CRY_container ">
+  <div class="CRY_player centered">
+    <video class="BG" id="video" src="Cover.mp4" type="video/mp4" autoplay="true" muted loop></video>
+    <div class="UIshade"></div>
+    <div class="pl"></div>
+    <div class="CRY_controls">
+      <div class="rew"></div>
+      <div class="play"></div>
+      <div class="pause"></div>
+      <div class="fwd"></div>
+      <div class="title"></div>
     </div>
-    <script type="text/javascript" src="jquery.js"></script>
-    <script type="text/javascript" src="jquery-ui.js"></script>
-    <script type="text/javascript" src="main.js"></script>
+    <div class="timeline">
+      <div class="playhead" id="playhead"></div>
+    </div>
+    <div class="playlist">
+      <div class="plc"></div>
+      <ul class="plul">
+        <!--Local file version audio only-->
+        <li audiourl="01_stereohopper.mp3">Track 01</li>
+		  <!-- you can play videofiles per track -->
+		  <li audiourl="02_stereohopper.mp3" videourl="Track02.mp4">Track 02</li>
+		  <li audiourl="03_stereohopper.mp3" videourl="Track03.mp4">Track 03</li>
+		  <li audiourl="04_stereohopper.mp3">Track 04</li>
+        
+        <!--IPFS hosted file versions with video file. !Caution the free vesion of pinata is quite limited. The files will likely not load--> 
+        <!--
+		<li audiourl="https://gateway.pinata.cloud/ipfs/QmZ2NqxCBTzoFWVSKzEvqqgYLEirUFRJqTxHoN1uzEKyY6" videourl="https://gateway.pinata.cloud/ipfs/QmYwEQw4X47N7bxRMp6153LAPMFnonnS78Q6qBuG4ALrUQ">Track 02</li>
+        <li audiourl="https://gateway.pinata.cloud/ipfs/QmdsyZ8XarSH3DEvvHMZdYzYtthQ699zA4j4tWPBjCKNAH" videourl="https://gateway.pinata.cloud/ipfs/QmNsbNU7ktQsUyvRRZ2URS1d45UFtjKyHfAGoBC4rGV2pA">Track 03</li>
+--> 
+        <!--IPFS hosted file version audio only !Caution the free vesion of pinata is quite limited. The files will likely not load--> 
+        <!--
+        <li audiourl="https://gateway.pinata.cloud/ipfs/QmW2M6fsSWb4ygksuG5VKT5YFSfSUcRqjKE3sToMhrKqu8">Track 04</li>
+-->
+        
+      </ul>
+    </div>
+  </div>
+</div>
+<script type="text/javascript" src="jquery.js"></script> 
+<script type="text/javascript" src="jquery-ui.js"></script> 
+<script type="text/javascript" src="main.js"></script>
 </body>
 </html>

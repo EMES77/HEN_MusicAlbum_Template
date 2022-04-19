@@ -60,4 +60,12 @@ next and previous songs:
 - UI Elements except for the progress bar will hide after 5 seconds of inactivity and show on moving the mouse or pressing a button
 
 
+ATTENTION Versum-Minters!
+
+Versum supports a range of Aspect Ration settings for interactive NFTs. 
+Be sure to set the aspect ratio to either
+Fixed size: 768x768 (it will always be 768x768, on smaller displays, parts of the cover might be cut off or you have to scroll)
+Dynamic 1:1 (it resizes smaller than 768x768, but not larger because it's capped in the players code)
+Fill (should work as well because the 1:1 ratio is set in the player code)
+
 That's it!
