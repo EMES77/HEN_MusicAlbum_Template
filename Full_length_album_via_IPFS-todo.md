@@ -1,9 +1,9 @@
-How to make the hicetnunc Music Album HTML Template OBJKT#25359 into a full length album:
+How to make the TEIA/HEN Music Album HTML Template OBJKT#25359 into a full length album:
 
 Just a word upfront. This is a workflow that worked for my test. I share my knowledge with you 
-but i’ll offer no guarantee nor do i take any liability for what you plan to do with it!
+but I’ll offer no guarantee nor do I take any liability for what you plan to do with it!
 
-Hicetnunc has a filesize-limit of 40MB which is a restriction coming from the file storage machanics. Files are stored on IPFS, the Interplanetary File System. If you want to know more about it, read here: ipfs.io
+TEIA, Hicetnunc and VERSUM have a filesize-limit of 100MB which is a restriction coming from the file storage machanics. Files are stored on IPFS, the Interplanetary File System. If you want to know more about it, read here: ipfs.io
 
 Also interactive HTML OBJKT are rendered inside a sandboxed iFrame. That means, Javascript from inside the iFrame cannot communicate with the outside. No interaction with the hosting page  hicetnunc.xyz and o loading media or other content from other domains. This is done to protect malicious attacks.
 
