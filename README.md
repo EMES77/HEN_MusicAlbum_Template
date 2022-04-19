@@ -1,6 +1,6 @@
 Hic et Nunc HTML Audio Player HTML Template by ©cryptemes
 
-Version 2.02
+Version 2.03
 
 Version 1.0 was programmed for ©stereohopper and released on hicetnunc.xyz as OBJKT#15472 on March 28, 2021
 hicetnunc.xyz/objkt/15472
